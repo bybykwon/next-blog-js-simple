@@ -8,10 +8,10 @@ import React, { use, useEffect, useState } from 'react';
 const PostDetailPage = ({ params }) => {
     const router = useRouter();
     const [post, setPost] = useState(null);
-    //params Promise ({id '1'})
     const [loading, setLoading] = useState(true);
-
-    //use() 훅을 사용하여 unWrap 하기
+    // params = Promise ({ id: '1' })
+    // use() 훅을 사용하여 unWrap 하기
+    // resolvedParams = { id: '1' }
     const resolvedParams = use(params);
 
     useEffect(() => {
@@ -26,7 +26,7 @@ const PostDetailPage = ({ params }) => {
                 console.error(error);
                 setLoading(false);
             });
-    }, [resolvedParams, id, router]);
+    }, [resolvedParams.id, router]);
 
     //로딩 중
     if (loading) {
