@@ -1,8 +1,11 @@
-// src/app/api/hello/route.ts
-import { NextResponse } from 'next/server';
+import { NextResponse } from "next/server";
 
-// GET /api/hello 주소로 요청이 오면 실행
+const helloPosts = [
+  { id: 1, title: "안녕하세요" },
+  { id: 2, title: "hello" },
+]
+
+// 서버 생성
 export async function GET() {
-    // 클라이언트에게 JSON 응답
-    return NextResponse.json({ message: '안녕하세요!' });
+  return NextResponse.json(helloPosts);
 }
